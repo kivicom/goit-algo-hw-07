@@ -32,6 +32,13 @@ def find_minimum(root):
         current = current.left
     return current.val
 
+def sum_values(root):
+    """Функція для знаходження суми всіх значень у BST"""
+    if root is None:
+        return 0
+    return root.val + sum_values(root.left) + sum_values(root.right)
+
+
 
 # Створення дерева та вставка елементів:
 root = Node(50)
@@ -45,3 +52,4 @@ root = insert(root, 80)
 # Пошук значення
 print("Найбільше значення у дереві:", find_maximum(root))
 print("Найменше значення у дереві:", find_minimum(root))
+print("Сума всіх значень у дереві:", sum_values(root))
