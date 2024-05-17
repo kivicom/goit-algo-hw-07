@@ -25,6 +25,13 @@ def find_maximum(root):
         current = current.right
     return current.val
 
+def find_minimum(root):
+    """Функція для знаходження найменшого значення в BST"""
+    current = root
+    while current.left is not None:
+        current = current.left
+    return current.val
+
 
 # Створення дерева та вставка елементів:
 root = Node(50)
@@ -37,3 +44,4 @@ root = insert(root, 80)
 
 # Пошук значення
 print("Найбільше значення у дереві:", find_maximum(root))
+print("Найменше значення у дереві:", find_minimum(root))
